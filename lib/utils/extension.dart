@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:help_harbor/constant/app_color.dart';
+import 'package:sizer/sizer.dart';
 
 extension SizedExtension on double {
   addHSpace() {
@@ -290,4 +292,60 @@ extension Roboto on String {
       textAlign: textAlign,
     );
   }
+}
+
+Widget commonTextFormField(
+    {String? hint,
+    double? fontSize,
+    void Function()? onTap,
+    Widget? prefixIcon,
+    Widget? suffixIcon,
+    bool? obSecure,
+    TextEditingController? controller,
+    AutovalidateMode? autovalidateMode,
+    String? Function(String?)? validator}) {
+  return SizedBox(
+    width: 90.w,
+    child: TextFormField(
+      controller: controller,
+      onTap: onTap ?? () {},
+      validator: validator ??
+          (value) {
+            return null;
+          },
+      autovalidateMode: autovalidateMode ?? AutovalidateMode.disabled,
+      style: TextStyle(fontSize: fontSize ?? 12.sp),
+      obscureText: obSecure ?? false,
+      decoration: InputDecoration(
+          hintText: hint ?? "",
+          hintStyle: TextStyle(fontSize: fontSize ?? 12.sp, color: greyColor),
+          focusedBorder: const UnderlineInputBorder(),
+          prefixIcon: prefixIcon,
+          suffixIcon: suffixIcon),
+    ),
+  );
+}
+
+Widget appButton(
+    {double? width,
+    double? height,
+    Color? color,
+    double? borderRadius,
+    String? text,
+    required void Function()? onTap}) {
+  return GestureDetector(
+    onTap: onTap,
+    child: Container(
+      width: width ?? 100.w,
+      height: height ?? 6.8.h,
+      decoration: BoxDecoration(
+        color: color ?? appColor,
+        borderRadius: BorderRadius.circular(borderRadius ?? 5.w),
+      ),
+      child: Center(
+        child:
+            (text ?? "").boldReadex(fontSize: 12.sp, fontColor: Colors.white),
+      ),
+    ),
+  );
 }

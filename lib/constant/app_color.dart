@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 const Color appColor = Color(0xff6750A4);
+const Color greyColor = Colors.grey;
+const Color blackColor = Colors.black;
+const Color whiteColor = Colors.white;
 // const Color lightGreyColor = Color(0xffbfbfbf);
 // const Color greyColor = Color(0xff6c6e6e);
 // const Color greyFontColor = Color(0xff777777);

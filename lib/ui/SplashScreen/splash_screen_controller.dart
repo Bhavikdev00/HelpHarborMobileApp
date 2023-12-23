@@ -16,7 +16,7 @@ class SplashScreenController extends GetxController {
   }
 
   void _navigate() {
-    Future.delayed(const Duration(seconds: 5)).then(
+    Future.delayed(const Duration(seconds: 3)).then(
       (value) {
         Get.offAllNamed(Routes.loginScreen);
       },
