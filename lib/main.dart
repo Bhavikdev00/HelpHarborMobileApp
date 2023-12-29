@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
             colorScheme: ColorScheme.fromSeed(seedColor: appColor),
             useMaterial3: true,
           ),
-          initialRoute: Routes.splashScreen,
+          initialRoute: Routes.bottomNevBar,
           getPages: Routes.getPages,
         );
       },

@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -119,8 +120,7 @@ class _UserDetailScreenState extends State<UserDetailScreen> {
                 7.h.addHSpace(),
                 appButton(
                     onTap: () {
-                      print(
-                          "Image ${ImageHelper.fileToBase64(controller.profileImage as File)}");
+                      log("Image ${ImageHelper.fileToBase64(controller.profileImage as File)}");
                     },
                     width: 90.w,
                     text: "Sign Up")
